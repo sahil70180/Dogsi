@@ -9,7 +9,7 @@ import { setCartItem } from "../../redux/features/cartSlice";
 import MetaData from "../layout/MetaData";
 import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
-
+import defaultImage from "../../assets/images/default_product.png"
 const ProductDetails = () => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const ProductDetails = () => {
     setactiveImg(
       product?.images[0]
         ? product?.images[0].url
-        : "/images/default_product.png"
+        : defaultImage
     );
   }, [product]);
 
@@ -37,7 +37,7 @@ const ProductDetails = () => {
     if (isError) {
       toast.error(error?.data?.message);
     }
-  }, [isError]);
+  }, [isError, error?.data?.message]);
 
   const increaseQty = () => {
     const count = document.querySelector(".count");
@@ -76,6 +76,8 @@ const ProductDetails = () => {
   return (
     <>
     <MetaData title={`${product.name}`} />
+    <div className="container">
+
     <div className="row d-flex justify-content-around">
       <div className="col-12 col-lg-5 img-fluid" id="product_image">
         <div className="p-3">
@@ -85,7 +87,7 @@ const ProductDetails = () => {
             alt={product?.name}
             width="340"
             height="390"
-          />
+            />
         </div>
         <div className="row justify-content-start mt-5">
           {product?.images.map((img) => (
@@ -100,7 +102,7 @@ const ProductDetails = () => {
                   src={img?.url}
                   alt={img?.url}
                   onClick={(e) => setactiveImg(img?.url)}
-                />
+                  />
               </Link>
             </div>
           ))}
@@ -121,7 +123,7 @@ const ProductDetails = () => {
             name="rating"
             starDimension="24px"
             starSpacing="1px"
-          />
+            />
           <span id="no-of-reviews" className="pt-1 ps-2">
             {product?.numOfReviews} Reviews
           </span>
@@ -145,7 +147,7 @@ const ProductDetails = () => {
           className="btn btn-primary d-inline ms-4"
           disabled={product?.stock <= 0}
           onClick={setItemToCart}
-        >
+          >
           Add to Cart
         </button>
 
@@ -171,13 +173,14 @@ const ProductDetails = () => {
         </p>
 
         {isAuthenticated ? (<NewReview productId={product?._id} />) :(
-        <div className={"alert alert-danger my-5"} type="alert">
+          <div className={"alert alert-danger my-5"} type="alert">
           Login to post your review
         </div>
         ) }
       </div>
     </div>
     {product?.reviews?.length > 0 && ( <ListReviews reviews={product?.reviews}/>) }
+        </div>
     </>
   );
 };

@@ -77,12 +77,14 @@ const PaymentMethod = () => {
     <>
       <MetaData title={"Payment Method"} />
       <CheckoutSteps shipping confirmOrder payment/>
+      <div className="container">
+
       <div className="row wrapper">
         <div className="col-10 col-lg-5">
           <form
             className="shadow rounded bg-body"
             onSubmit={paymenthandler}
-          >
+            >
             <h2 className="mb-4">Select Payment Method</h2>
 
             <div className="form-check">
@@ -93,7 +95,7 @@ const PaymentMethod = () => {
                 id="codradio"
                 value="COD"
                 onChange={(e) => setMethod("COD")}
-              />
+                />
               <label className="form-check-label" htmlFor="codradio">
                 Cash on Delivery
               </label>
@@ -106,7 +108,7 @@ const PaymentMethod = () => {
                 id="cardradio"
                 value="Card"
                 onChange={(e) => setMethod("Card")}
-              />
+                />
               <label className="form-check-label" htmlFor="cardradio">
                 Card - VISA, MasterCard
               </label>
@@ -118,6 +120,7 @@ const PaymentMethod = () => {
           </form>
         </div>
       </div>
+                </div>
     </>
   );
 };

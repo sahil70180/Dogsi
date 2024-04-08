@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import StarRatings from 'react-star-ratings';
+import defaultImage from "../../assets/images/default_product.png"
 
-const ProductItem = ({ product, columnSize }) => {
+const ProductItem = ({ product, columnSize}) => {
   return (
     <div className={`col-sm-12 col-md-6 col-lg-${columnSize} my-3`}>
       <div className="card p-3 rounded">
@@ -10,7 +11,7 @@ const ProductItem = ({ product, columnSize }) => {
           className="card-img-top mx-auto"
           src={product?.images[0]
             ? product?.images[0].url
-            : "/images/default_product.png"}
+            : defaultImage}
           alt={product?.name}
         />
         <div className="card-body ps-3 d-flex justify-content-center flex-column">

@@ -73,6 +73,10 @@ nav {
 .cart-underline {
   text-decoration: none;
 }
+.banner{
+  /* border: 2px solid blue; */
+  width: 100%;
+}
 
 .home-banner {
   width: 100%;
@@ -102,7 +106,7 @@ nav {
 }
 
 .card-title a:hover {
-  color: #fa9c23;
+  color: #cd814f;
   text-decoration: none;
 }
 
@@ -121,7 +125,7 @@ nav {
 
 .ratings {
   font-size: 1.2rem;
-  color: #fdcc0d;
+  color: #cd814f;
 }
 
 #no_of_reviews {
@@ -157,7 +161,7 @@ footer {
 #cart_btn,
 #review_btn {
   border-radius: 2rem;
-  background-color: #fa9c23;
+  background-color: #cd814f;
   border: none;
   padding: 0.5rem 2rem;
 }
@@ -202,8 +206,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #cd814f;
+  border-color: #cd814f transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -242,15 +246,15 @@ footer {
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
   margin-top: 2rem;
   border-radius: 5rem;
 }
 
 #view_order_details {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
 }
 
 #order_summary {
@@ -303,14 +307,14 @@ footer {
 
 .wrapper form .btn,
 .fetch-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
   color: white;
   margin-top: 1rem;
 }
 
 .fetch-btn:hover {
-  background-color: #fa9c23;
+  background-color: #cd814f;
   color: white;
 }
 
@@ -388,7 +392,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #cd814f;
   color: #fff;
 }
 
@@ -396,7 +400,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #cd814f;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -404,9 +408,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #cd814f;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #cd814f;
   margin-right: -1px;
 }
 
@@ -446,8 +450,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
 }
 
 /* Confirm Order */
@@ -459,8 +463,8 @@ footer {
 
 .update-btn,
 #create_btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
   color: white;
 }
 
@@ -470,16 +474,16 @@ footer {
 
 /* Pagination */
 .page-item.active .page-link {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
 }
 
 .page-link {
-  color: #fa9c23;
+  color: #cd814f;
 }
 
 .page-link:hover {
-  color: #fa9c23;
+  color: #cd814f;
 }
 
 /* Products List Admin */
@@ -526,11 +530,11 @@ footer {
 }
 
 .orange {
-  color: #fa9c23;
+  color: #cd814f;
 }
 
 .yellow {
-  color: #fdcc0d;
+  color: #cd814f;
 }
 
 .review_user {
@@ -548,8 +552,8 @@ footer {
 }
 
 #filter_form button {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #cd814f;
+  border-color: #cd814f;
 }
 
 .filter {
@@ -571,5 +575,5 @@ footer {
   background-color: #f3f4f6;
   border-color: #f3f4f6;
   border-radius: 0.3rem;
-  color: #fa9c23;
+  color: #cd814f;
 }

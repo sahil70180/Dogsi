@@ -34,7 +34,7 @@ const Home = () => {
     if (isError) {
       toast.error(error?.data?.message);
     }
-  }, [isError]);
+  }, [isError, error?.data?.message]);
 
   const columnSize = keyword ? 4 : 3;
 
@@ -42,9 +42,11 @@ const Home = () => {
 
   return (
     <>
-      <img src={Banner} alt="global-banner" className="home-banner" />
       <MetaData title={"Buy Best Product Online"} />
-      <div>
+    <div className="banner">
+      <img src={Banner} alt="global-banner" className="home-banner" />      
+    </div>
+      <div className="container">
         <div className="row">
           {keyword && (
             <div className="col-6 col-md-3 mt-5">
@@ -55,7 +57,7 @@ const Home = () => {
             <section id="products" className="mt-5">
               <div className="row">
                 {data?.products?.map((product) => (
-                  <ProductItem product={product} columnSize={columnSize} />
+                  <ProductItem product={product} columnSize={columnSize} key={product?._id}/>
                 ))}
               </div>
             </section>

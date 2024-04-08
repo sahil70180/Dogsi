@@ -5,7 +5,7 @@ import { createApi , fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 export const productApi = createApi({
     reducerPath : 'productApi',
     baseQuery : fetchBaseQuery({baseUrl : "/api/v1"}),
-    tagTypes :  ["Product"],
+    tagTypes :  ["Product", "AdminProducts"],
     endpoints : (buidler) => ({
 
         // Endpoint 1 : Get All products
@@ -39,11 +39,35 @@ export const productApi = createApi({
         }),
         canUserReview : buidler.query({
             query : (productId) => `/can_review/?productId=${productId}`,
-        })
+        }),
+        getAdminProdcuts : buidler.query({
+            query : () => `/admin/products`,
+            providesTags : ["AdminProducts"]
+        }),
+        createProduct : buidler.mutation({
+            query(body){
+                return {
+                    url : "/admin/product/new",
+                    method : "POST",
+                    body,
+                }
+            },
+            invalidatesTags : ["AdminProducts"]
+        }),
+        updateProduct : buidler.mutation({
+            query({id , body}){
+                return {
+                    url : `/admin/products/${id}`,
+                    method : "PUT",
+                    body,
+                }
+            },
+            invalidatesTags : ["AdminProducts", "Product"]
+        }),
     })
 })
 
 // getProducts is a endpoint name, and now we have to export it like a hook (RTK documentation)
 // the reason for exporting hook is that we can use isLoading, iserro and all these varaibles directly 
 
-export const  { useGetProductsQuery, useGetProductDetailsQuery, useSubmitReviewMutation, useCanUserReviewQuery} = productApi
+export const  { useGetProductsQuery, useGetProductDetailsQuery, useSubmitReviewMutation, useCanUserReviewQuery, useGetAdminProdcutsQuery, useCreateProductMutation, useUpdateProductMutation} = productApi

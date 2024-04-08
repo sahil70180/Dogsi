@@ -101,6 +101,8 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
   // get resetPassword Token from Model Method getRestPasswordToken();
   const resetToken = user.getResetPasswordToken();
 
+  // console.log(typeof(resetToken));
+
   await user.save();
 
   // prepare rest URL
@@ -111,11 +113,11 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
   try {
     await sendEmail({
         email: user.email,
-        subject: "SHOPIT Password Recovery",
+        subject: "Dogsi Password Recovery",
         message,
     });
     res.status(200).json({
-      message: `Email send to : ${user.email} successfully`,
+     message : "Recovery Email Send Successfully"
     });
   } 
   catch (error) {
@@ -153,7 +155,10 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) =>{
   user.resetpasswordExpire = undefined;
   await user.save();
 
-  assignToken(user, 200, res);
+  // assignToken(user, 200, res);
+  res.status(200).json({
+    message : "Reset Successfully"
+  })
 
 })
 

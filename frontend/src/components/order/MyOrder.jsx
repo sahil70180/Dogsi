@@ -92,7 +92,7 @@ const MyOrder = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <MetaData title={"My Orders"} />
       {data?.order?.length > 0 ? (
         <>

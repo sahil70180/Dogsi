@@ -24,7 +24,7 @@ const AdminDashboard = () => {
         endDate : new Date(endDate).toISOString()
       })
     }
-  },[error])
+  },[error, data, endDate, startDate, getSalesData])
 
   if(isLoading){
     return <Loader/>
@@ -71,7 +71,7 @@ const AdminDashboard = () => {
               <div className="text-center card-font-size">
                 Sales
                 <br />
-                <b>Rs. {data?.totalSales}</b>
+                <b>Rs. {data?.totalSales.toFixed(2)}</b>
               </div>
             </div>
           </div>

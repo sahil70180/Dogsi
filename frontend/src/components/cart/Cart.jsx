@@ -53,6 +53,8 @@ const Cart = () => {
   return (
     <>
       <MetaData title={"Your Cart"} />
+      <div className="container">
+
       {cartItems?.length === 0 ? (
         <h2 className="mt-5">Your Cart is Empty Now</h2>
       ) : (
@@ -73,7 +75,7 @@ const Cart = () => {
                           alt="Laptop"
                           height="90"
                           width="115"
-                        />
+                          />
                       </div>
                       <div className="col-5 col-lg-3">
                         <Link to={`/products/${item?.product}`}>{item?.name}</Link>
@@ -89,7 +91,7 @@ const Cart = () => {
                             className="form-control count d-inline"
                             value={item?.quantity}
                             readonly
-                          />
+                            />
                           <span className="btn btn-primary plus" onClick={() => increaseQty(item, item?.quantity)}> + </span>
                         </div>
                       </div>
@@ -98,7 +100,7 @@ const Cart = () => {
                           id="delete_cart_item"
                           className="fa fa-trash btn btn-danger"
                           onClick={() => removeCartItemHandler(item?.product)}
-                        ></i>
+                          ></i>
                       </div>
                     </div>
                   </div>
@@ -131,6 +133,7 @@ const Cart = () => {
           </div>
         </>
       )}
+      </div>
     </>
   );
 };

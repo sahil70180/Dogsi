@@ -15,6 +15,8 @@ const ConfirmOrder = () => {
     <>
       <MetaData title={"Confirm Order Info"} />
       <CheckoutSteps shipping confirmOrder/>
+      <div className="container">
+
       <div className="row d-flex justify-content-between">
         <div className="col-12 col-lg-8 mt-5 order-confirm">
           <h4 className="mb-3">Shipping Info</h4>
@@ -42,7 +44,7 @@ const ConfirmOrder = () => {
                       alt={item?.name}
                       height="45"
                       width="65"
-                    />
+                      />
                   </div>
 
                   <div className="col-5 col-lg-6">
@@ -86,11 +88,12 @@ const ConfirmOrder = () => {
               to="/payment_method"
               id="checkout_btn"
               className="btn btn-primary w-100"
-            >
+              >
               Proceed to Payment
             </Link>
           </div>
         </div>
+              </div>
       </div>
     </>
   );

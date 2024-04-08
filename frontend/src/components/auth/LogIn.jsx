@@ -10,7 +10,8 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login, { isLoading, error}] = useLoginMutation();
+  // console.log(error);
 
   const { isAuthenticated } = useSelector((state) => state.auth);
 
@@ -36,6 +37,7 @@ const LogIn = () => {
     <>
     <MetaData title={"Login"} />
 
+    <div className="container">
     <div className="row wrapper">
       <div className="col-10 col-lg-5">
         <form className="shadow rounded bg-body" onSubmit={handleformSubmit}>
@@ -89,7 +91,8 @@ const LogIn = () => {
         </form>
       </div>
     </div>
-            </>
+    </div>
+    </>
   );
 };
 

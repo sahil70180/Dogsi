@@ -16,15 +16,13 @@ const Orderdetails = () => {
   const ispaid = order?.paymentInfo?.status === "paid" ? true : false;
 
   useEffect(() => {
+    if(isSuccess){
+      toast.success("Your Order Details")
+    }
     if (error) {
       toast.error(error?.data?.message);
-    }
-    
-  }, [error]);
-
-  if (isSuccess) {
-    toast.success("Order Details");
-  }
+    }    
+  }, [isSuccess, error]);
 
   if (isLoading) {
     return <Loader />;

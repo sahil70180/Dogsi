@@ -9,7 +9,6 @@ import toast from 'react-hot-toast'
 import html2canvas from "html2canvas"
 import {jsPDF} from "jspdf"
 
-
 const Invoice = () => {
     const params = useParams();
     const {data, isLoading, error} = useOrderDetailsQuery(params?.id)
@@ -44,6 +43,8 @@ const Invoice = () => {
     return (
         <>
         <MetaData title={"Order Invoice"}/>
+        <div className="container">
+
     <div className="order-invoice my-5">
       <div className="row d-flex justify-content-center mb-5">
         <button className="btn btn-success col-md-5" onClick={handleDownload}>
@@ -57,7 +58,7 @@ const Invoice = () => {
           </div>
           <h1>INVOICE #{order?._id}</h1>
           <div id="company" className="clearfix">
-            <div>ShopIT</div>
+            <div>Dogsi</div>
             <div>
               455 Foggy Heights,
               <br />
@@ -65,7 +66,7 @@ const Invoice = () => {
             </div>
             <div>(+91) 7018058138</div>
             <div>
-              <a href="mailto:info@shopit.com">info@shopit.com</a>
+              <a href="mailto:info@shopit.com">info@dogsi.com</a>
             </div>
           </div>
           <div id="project">
@@ -92,8 +93,8 @@ const Invoice = () => {
             </thead>
             <tbody>
                 {order?.orderItems?.map((item) => (
-
-              <tr>
+                  
+                  <tr>
                 <td className="service">{item?.product}</td>
                 <td className="desc">{item?.name}</td>
                 <td className="unit">{item?.price}</td>
@@ -144,8 +145,8 @@ const Invoice = () => {
         </footer>
       </div>
     </div>
-
-        </>
+                </div>
+    </>
   )
 }
 

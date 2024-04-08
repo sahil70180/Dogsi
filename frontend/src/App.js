@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <Toaster position="top-center" />
         <Header />
-        <div className="container">
+        <div>
           <Routes>
             {userRoutes}
             {adminRoutes}
