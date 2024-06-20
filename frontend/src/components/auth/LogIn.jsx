@@ -22,16 +22,16 @@ const LogIn = () => {
     if (error) {
       toast.error(error?.data?.message);
     }
-  }, [error, isAuthenticated, navigate]);
+  }, [ error, isAuthenticated, navigate]);
 
-  const handleformSubmit = (event) => {
+  const handleformSubmit = async (event) => {
     event.preventDefault();
 
     const loginData = {
       email,
       password,
     };
-    login(loginData);
+    await login(loginData);
   };
   return (
     <>

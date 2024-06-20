@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getPriceQueryParams } from "../../helpers/helper";
 import { PRODUCT_CATEGORIES } from "../../constants/Constants";
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 
 const Filters = () => {
   const [min, setMin] = useState(0);
@@ -122,7 +122,7 @@ const Filters = () => {
       ))}
 
       <hr />
-      <h5 className="mb-3">Ratings</h5>
+      {/* <h5 className="mb-3">Ratings</h5>
 
       {[5, 4, 3, 2, 1].map((rating) => (
         <div className="form-check">
@@ -146,9 +146,7 @@ const Filters = () => {
             />
           </label>
         </div>
-      ))}
-
-      {/*  */}
+      ))} */}
     </div>
   );
 };

@@ -82,6 +82,11 @@ nav {
   width: 100%;
 }
 
+#NotFound{
+  /* border: 2px solid red; */
+  height: 100vh;
+}
+
 #cart_count {
   background-color: #cd814f;
   padding: 0.2rem 0.5rem;

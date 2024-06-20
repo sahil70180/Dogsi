@@ -5,17 +5,28 @@ import MetaData from "../layout/MetaData";
 import { MDBDataTable } from "mdbreact";
 import { Link } from "react-router-dom";
 import Adminlayout from "../layout/Adminlayout";
-import {useGetAdminProdcutsQuery} from "../../redux/api/productApi"
+import {useDeleteProductMutation, useGetAdminProdcutsQuery} from "../../redux/api/productApi"
 
 const ListProducts = () => {
   const { data, error, isLoading } = useGetAdminProdcutsQuery()
-  console.log(data);
+
+  const [deleteProduct, {isLoading : isDeleteLoading, error : isDeleteError, isSuccess}] = useDeleteProductMutation();
+
+  const deletproductHandler = async (id) => {
+    await deleteProduct(id);
+  }
 
   useEffect(() => {
     if (error) {
       toast.error(error?.data?.message);
     }
-  }, [error]);
+    if(isDeleteError){
+      toast.error(error?.data?.message)
+    }
+    if(isSuccess){
+      toast.success("Prodcut Deleted")
+    }
+  }, [error, isSuccess, isDeleteError]);
 
   const setProducts = () => {
     const products = {
@@ -57,14 +68,10 @@ const ListProducts = () => {
             >
               <i className="fa fa-pencil"></i>
             </Link>
-            <Link
-              to={`/admin/products/${product?._id}/upload_images`}
-              className="btn btn-outline-success ms-2"
-            >
-              <i className="fa fa-image"></i>
-            </Link>
-            <button
-              className="btn btn-outline-success ms-2"
+            <button 
+              className="btn btn-outline-danger ms-2"
+              onClick={() => deletproductHandler(product?._id)}
+              disabled={isDeleteLoading}
             >
               <i className="fa fa-trash"></i>
             </button>

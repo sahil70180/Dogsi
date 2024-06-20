@@ -21,6 +21,7 @@ const ProductDetails = () => {
     params?.id
   );
   const product = data?.product;
+  // console.log(product);
 
   const {isAuthenticated} = useSelector((state) => state.auth);
 

@@ -18,6 +18,7 @@ import PaymentMethod from "../cart/PaymentMethod";
 import MyOrder from "../order/MyOrder";
 import Orderdetails from "../order/Orderdetails";
 import Invoice from "../invoice/Invoice";
+import NotFound from "../layout/NotFound";
 
 const UserRoutes = () => {
   return (
@@ -129,6 +130,7 @@ const UserRoutes = () => {
           </ProtectedRoute>
         }
       />
+      <Route path="*" element={<NotFound/>}/>
     </>
   );
 };

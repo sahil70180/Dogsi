@@ -18,22 +18,7 @@ const Adminlayout = ({children}) => {
           name: "Products",
           url: "/admin/products",
           icon: "fab fa-product-hunt",
-        },
-        {
-          name: "Orders",
-          url: "/admin/orders",
-          icon: "fas fa-receipt",
-        },
-        {
-          name: "Users",
-          url: "/admin/users",
-          icon: "fas fa-receipt",
-        },
-        {
-          name: "Reviews",
-          url: "/admin/reviews",
-          icon: "fas fa-star",
-        },
+        }
       ];
   return (
     <div>
